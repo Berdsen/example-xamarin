@@ -1,0 +1,11 @@
+
+<Project>
+ <PropertyGroup>
+   <Authors>thiery, berdsen</Authors>
+   <Description>Example Xamarin Application using the SharpBrick.PoweredUp implementation</Description>
+   <PackageTags>lego, poweredup, powered, up, controlplus, csharp, dotnet, technic, techniccontrolplus, legocontrolplus, legotechniccontrolplus, legopoweredup, xamarin, android</PackageTags>
+   <PackageProjectUrl>https://github.com/sharpbrick/example-xamarin</PackageProjectUrl>
+   <RepositoryUrl>https://github.com/sharpbrick/example-xamarin</RepositoryUrl>
+   <PackageLicense>MIT</PackageLicense>
+ </PropertyGroup>
+</Project>
