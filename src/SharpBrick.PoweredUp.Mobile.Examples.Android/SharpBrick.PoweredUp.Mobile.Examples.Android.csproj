@@ -64,7 +64,7 @@
     <Compile Include="AndroidInitializer.cs" />
     <Compile Include="ApplicationWrapper.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="NativeDeviceInfo.cs" />
+    <Compile Include="NativeDeviceInfoProvider.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
