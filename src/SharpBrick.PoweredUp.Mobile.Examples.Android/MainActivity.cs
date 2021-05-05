@@ -17,6 +17,7 @@ namespace SharpBrick.PoweredUp.Mobile.Examples.Droid
 
             global::Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
             UserDialogs.Init(this);
 
             LoadApplication(ApplicationWrapper.Application);

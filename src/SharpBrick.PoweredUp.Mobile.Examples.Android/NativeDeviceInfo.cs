@@ -18,7 +18,9 @@ namespace SharpBrick.PoweredUp.Mobile.Examples.Droid
             {
                 return new NativeDeviceInfo()
                 {
-                    MacAddress = btDevice.Address,
+                    DeviceIdentifier = Convert.ToUInt64(btDevice.Address.Replace(":", ""), 16).ToString(),
+                    MacAddress = btDevice.Address.Split(':').Select(x => Convert.ToByte(x, 16)).ToArray(),
+                    MacAddressString = btDevice.Address,
                     MacAddressNumeric = Convert.ToUInt64(btDevice.Address.Replace(":", ""), 16)
                 };
             }
@@ -27,9 +29,13 @@ namespace SharpBrick.PoweredUp.Mobile.Examples.Droid
             {
                 string address = $"000000000000{deviceAddress:X}";
                 address = address.Substring(address.Length - 12);
+                var deviceAddressString = string.Join(":", Enumerable.Range(0, 6).Select(i => address.Substring(i * 2, 2)));
+
                 return new NativeDeviceInfo()
                 {
-                    MacAddress = string.Join(":", Enumerable.Range(0, 6).Select(i => address.Substring(i * 2, 2))),
+                    DeviceIdentifier = deviceAddress.ToString(),
+                    MacAddress = deviceAddressString.Split(':').Select(x => Convert.ToByte(x, 16)).ToArray(),
+                    MacAddressString = deviceAddressString,
                     MacAddressNumeric = deviceAddress
                 };
 
