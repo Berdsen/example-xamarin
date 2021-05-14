@@ -18,7 +18,7 @@
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
     <PackageReference Include="Prism.Forms" Version="8.0.0.1909" />
     <PackageReference Include="Prism.Unity.Forms" Version="8.0.0.1909" />
-    <PackageReference Include="SharpBrick.PoweredUp.Mobile" Version="4.0.0" />
+    <PackageReference Include="SharpBrick.PoweredUp.Mobile" Version="4.0.5" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
