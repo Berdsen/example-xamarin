@@ -10,10 +10,9 @@ namespace SharpBrick.PoweredUp.Mobile.Examples.Examples
     {
         private INativeDeviceInfoProvider _nativeDeviceInfo;
         
-        public BaseExample()
+        public BaseExample(INativeDeviceInfoProvider deviceInfo)
         {
-            // should be given by DI but to not change all example ctors I used it on the dirty way :)
-            _nativeDeviceInfo = App.NativeDeviceInfo;
+            _nativeDeviceInfo = deviceInfo;
         }
 
         protected PoweredUpHost Host { get; set; }
@@ -58,7 +57,8 @@ namespace SharpBrick.PoweredUp.Mobile.Examples.Examples
             Hub result = null;
 
             Log.LogInformation("Finding Service");
-            var cts = new CancellationTokenSource();
+            var cts = new CancellationTokenSource(10000);
+
             Host.Discover(async hub =>
             {
                 // add this when you are interested in a tracing of the message ("human readable")

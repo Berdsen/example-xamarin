@@ -1,11 +1,16 @@
 using System.Threading.Tasks;
 using SharpBrick.PoweredUp;
+using SharpBrick.PoweredUp.Mobile;
 using SharpBrick.PoweredUp.Mobile.Examples.Examples;
 
 namespace Example
 {
     public class ExampleMoveHubInternalTachoMotorControl : BaseExample
     {
+        public ExampleMoveHubInternalTachoMotorControl(INativeDeviceInfoProvider deviceInfo) : base(deviceInfo)
+        {
+        }
+
         public override async Task ExecuteAsync()
         {
             using (var moveHub = Host.FindByType<MoveHub>())

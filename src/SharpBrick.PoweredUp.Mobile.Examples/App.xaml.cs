@@ -13,8 +13,6 @@ namespace SharpBrick.PoweredUp.Mobile.Examples
 {
     public partial class App : PrismApplication
     {
-        public static INativeDeviceInfoProvider NativeDeviceInfo { get; private set; }
-
         public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
         {
             InitializeComponent();
@@ -42,8 +40,8 @@ namespace SharpBrick.PoweredUp.Mobile.Examples
 
             containerRegistry.RegisterSingleton<IPoweredUpBluetoothAdapter, XamarinPoweredUpBluetoothAdapter>();
 
-            // containerRegistry.RegisterSingleton<BaseExample, ExampleBluetoothByKnownAddress>();
             containerRegistry.RegisterSingleton<BaseExample, ExampleMoveHubColors>();
+            // containerRegistry.RegisterSingleton<BaseExample, ExampleBluetoothByKnownAddress>();
             // containerRegistry.RegisterSingleton<BaseExample, ExampleMoveHubInternalTachoMotorControl>();
 
             // base navigation
@@ -52,7 +50,6 @@ namespace SharpBrick.PoweredUp.Mobile.Examples
 
         protected override void OnInitialized()
         {
-            NativeDeviceInfo = Container.Resolve<INativeDeviceInfoProvider>();
         }
 
         protected override void OnResume()

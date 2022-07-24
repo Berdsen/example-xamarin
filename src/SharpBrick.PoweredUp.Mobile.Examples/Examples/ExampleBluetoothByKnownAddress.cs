@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using SharpBrick.PoweredUp;
+using SharpBrick.PoweredUp.Mobile;
 using SharpBrick.PoweredUp.Mobile.Examples.Examples;
 
 namespace Example
@@ -8,6 +9,10 @@ namespace Example
     {
         public const ulong ChangeMe_BluetoothAddress = 158897336311065;
         public TechnicMediumHub DirectlyConnectedHub { get; private set; }
+
+        public ExampleBluetoothByKnownAddress(INativeDeviceInfoProvider deviceInfo) : base(deviceInfo)
+        {
+        }
 
         // device needs to be switched on!
         public override async Task DiscoverAsync(bool enableTrace)
